@@ -25,6 +25,9 @@ inputs:
   commit_message:
     description: 'A custom message for the commmit'
     required: false
+  clone_depth:
+    description: 'Git Clone depth for the target repository'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -36,6 +39,7 @@ runs:
     - ${{ inputs.destination-branch }}
     - ${{ inputs.destination-branch-create }}
     - ${{ inputs.commit-message }}
+    - ${{ inputs.clone-depth }}
 branding:
   icon: 'git-commit'
   color: 'green'
